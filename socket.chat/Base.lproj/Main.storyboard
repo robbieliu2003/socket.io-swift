@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9058" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9048"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="socket_chat" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2qo-vD-ND3">
+                                <rect key="frame" x="0.0" y="20" width="600" height="520"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ISh-7Y-ydo">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ISh-7Y-ydo" id="PKi-ce-jJy">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="NhJ-kx-NAI"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="9jW-OH-Wks"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hJ9-DM-POe">
+                                <rect key="frame" x="0.0" y="540" width="600" height="60"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="请输入聊天内容" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ID1-bB-SLC">
+                                        <rect key="frame" x="10" y="8" width="540" height="44"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bMq-Ta-CWB">
+                                        <rect key="frame" x="560" y="8" width="30" height="44"/>
+                                        <state key="normal" title="发送"/>
+                                        <connections>
+                                            <action selector="send:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ov5-Zb-pHq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="ID1-bB-SLC" firstAttribute="leading" secondItem="hJ9-DM-POe" secondAttribute="leading" constant="10" id="Bb8-mr-W71"/>
+                                    <constraint firstItem="ID1-bB-SLC" firstAttribute="top" secondItem="hJ9-DM-POe" secondAttribute="top" constant="8" id="C8B-NF-wV9"/>
+                                    <constraint firstItem="bMq-Ta-CWB" firstAttribute="top" secondItem="hJ9-DM-POe" secondAttribute="top" constant="8" id="HCJ-0D-bSe"/>
+                                    <constraint firstAttribute="height" constant="60" id="Orx-8K-7iP"/>
+                                    <constraint firstAttribute="bottom" secondItem="ID1-bB-SLC" secondAttribute="bottom" constant="8" id="Rd2-Ou-fTZ"/>
+                                    <constraint firstItem="bMq-Ta-CWB" firstAttribute="leading" secondItem="ID1-bB-SLC" secondAttribute="trailing" constant="10" id="fpL-C3-wjV"/>
+                                    <constraint firstAttribute="trailing" secondItem="bMq-Ta-CWB" secondAttribute="trailing" constant="10" id="iVI-cf-0h5"/>
+                                    <constraint firstAttribute="bottom" secondItem="bMq-Ta-CWB" secondAttribute="bottom" constant="8" id="nkw-ob-RGq"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="2qo-vD-ND3" secondAttribute="trailing" id="0og-6y-d1z"/>
+                            <constraint firstAttribute="trailing" secondItem="hJ9-DM-POe" secondAttribute="trailing" id="5LV-3g-02H"/>
+                            <constraint firstItem="2qo-vD-ND3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="HCe-Y0-06U"/>
+                            <constraint firstItem="2qo-vD-ND3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Hzv-tV-eaM"/>
+                            <constraint firstItem="hJ9-DM-POe" firstAttribute="top" secondItem="2qo-vD-ND3" secondAttribute="bottom" id="Ol9-vc-65c"/>
+                            <constraint firstItem="hJ9-DM-POe" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="WiC-OO-XWA"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="hJ9-DM-POe" secondAttribute="bottom" id="t5E-3K-pSm"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="2qo-vD-ND3" id="pJA-Dc-ZGx"/>
+                        <outlet property="textInput" destination="ID1-bB-SLC" id="G9l-dz-7pk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
